@@ -1,13 +1,20 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { addNote } from '../redux/actions/actions';
 
 const NotesInput = () => {
   const [note, setNote] = useState('');
+  const seletedNote = useSelector((state) => state.seletedNote);
 
   const handleNoteChange = (event) => {
     setNote(event.target.value);
   };
+
+  useEffect(() => {
+    if (seletedNote) {
+      setNote(seletedNote.content);
+    }
+  }, [seletedNote]);
 
   const dispatch = useDispatch();
   // @desc    Add a new problem
@@ -24,25 +31,25 @@ const NotesInput = () => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="date">Date: </label>
+        <label htmlFor='date'>Date: </label>
         <input
-          type="date"
-          id="date"
-          name="date"
+          type='date'
+          id='date'
+          name='date'
           defaultValue={today}
           readOnly
         />
 
         <textarea
-          className="notes-textarea"
-          placeholder="Enter your notes here..."
-          id="note"
-          name="note"
+          className='notes-textarea'
+          placeholder='Enter your notes here...'
+          id='note'
+          name='note'
           value={note}
           onChange={handleNoteChange}
         />
 
-        <button className="notes-submit-btn" type="submit">
+        <button className='notes-submit-btn' type='submit'>
           Save Notes
         </button>
       </form>

@@ -23,7 +23,7 @@ export const addNote = (note) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(note),
+        body: JSON.stringify({ note }),
       });
 
       //receive response from DB
@@ -50,7 +50,7 @@ export const viewAllNotes = () => {
       });
 
       const data = await response.json();
-
+      console.log('data from backend:', data);
       //dispatch reducer to add all notes from DB to state
       dispatch({
         type: types.VIEW_ALL_NOTES,
@@ -59,5 +59,14 @@ export const viewAllNotes = () => {
     } catch (error) {
       console.error('Error fetching all notes:', error);
     }
+  };
+};
+
+export const setSelectNote = (note) => {
+  return async (dispatch) => {
+    dispatch({
+      type: types.SET_SELETED_NOTE,
+      payload: note,
+    });
   };
 };

@@ -15,10 +15,16 @@ const Notes = () => {
 
   console.log('notesList:', notesList);
   return (
-    <div className="notes">
+    <div className='notes'>
       {/* render all notes from DB */}
+      {console.log('notesList:', notesList)}
       {notesList.map((note) => (
-        <NoteItem key={note._id} date={note.date} content={note.content} />
+        <NoteItem
+          key={note.id}
+          id={note.id}
+          date={note.date}
+          content={note.input}
+        />
       ))}
     </div>
   );
