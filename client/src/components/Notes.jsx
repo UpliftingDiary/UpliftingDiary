@@ -17,6 +17,7 @@ const Notes = () => {
   return (
     <div className='notes'>
       {/* render all notes from DB */}
+      {console.log('notesList:', notesList)}
       {notesList.map((note) => (
         <NoteItem
           key={note.id}

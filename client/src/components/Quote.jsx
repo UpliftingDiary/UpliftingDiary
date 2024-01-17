@@ -8,9 +8,9 @@ const Quote = () => {
   const quote = useSelector((state) => state.quote);
   //   console.log('quote:', quote);
 
-  useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchData());
+  // }, [dispatch]);
 
   return (
     <div className='quote-container'>

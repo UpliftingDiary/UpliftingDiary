@@ -6,6 +6,7 @@ const initialState = {
     { date: '01-01-2024', content: 'hello world' },
     { date: '01-09-2024', content: 'hi world' },
   ],
+  seletedNote: null,
 };
 
 const quoteReducer = (state = initialState, action) => {
@@ -22,6 +23,12 @@ const quoteReducer = (state = initialState, action) => {
       return {
         ...state,
         notes: action.payload,
+      };
+
+    case types.SET_SELETED_NOTE:
+      return {
+        ...state,
+        seletedNote: action.payload,
       };
     default:
       return state;

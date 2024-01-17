@@ -8,11 +8,21 @@ async function getEntries() {
   return entries;
 }
 
-async function addEntries(input) {
+async function addEntries(note) {
+  console.log('inside addEntried', note);
   const addEntry = await sql`INSERT INTO entry(input)
-  VALUES (${input})
-  return input`;
+  VALUES (${note})
+  RETURNING *`;
+
+  console.log(addEntry[0]);
   return addEntry[0];
 }
 
-module.exports = { getEntries, addEntries };
+async function oneEntry(id) {
+  console.log('inside oneEntry:', id);
+  const grabOneEntry = await sql`SELECT * FROM entry
+  WHERE id = ${id}`;
+  return grabOneEntry[0];
+}
+
+module.exports = { getEntries, addEntries, oneEntry };
