@@ -13,16 +13,16 @@ const Quote = () => {
   }, [dispatch]);
 
   return (
-    <div className="quoteContainer">
-      <p className="quote">There's no crying in baseball! </p>
-      <p className="author">- A League of Their Own</p>
+    <div className='quoteContainer'>
+      {/* <p className="quote">There's no crying in baseball! </p>
+      <p className="author">- A League of Their Own</p> */}
       {quote ? (
         <div>
-          <p className="quote">{quote.quote}</p>
-          <p className="author">— {quote.author}</p>
+          <p className='quote'>{quote.quote}</p>
+          <p className='author'>— {quote.author}</p>
         </div>
       ) : (
-        <ImSpinner9 className="spinner" size="2em" />
+        <ImSpinner9 className='spinner' size='2em' />
       )}
     </div>
   );

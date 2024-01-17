@@ -3,10 +3,15 @@ const app = express();
 const postgres = require('postgres');
 require('dotenv').config();
 const quoteController = require('./controllers/quoteController.js');
+const entryController = require('./controllers/entryController.js');
 
-app.get('/entries', (req, res) => {
-  console.log('inside the database');
-  return res.status(200).json();
+// function getUsers () {
+//   SELECT input FROM entry;
+// }
+
+app.get('/api/notes', entryController.entry, (req, res) => {
+  console.log(res.locals.notes);
+  return res.status(200).json(res.locals.notes);
 });
 
 app.get('/api/quote', quoteController.getSingleQuote, (req, res) => {
@@ -14,4 +19,4 @@ app.get('/api/quote', quoteController.getSingleQuote, (req, res) => {
   return res.status(200).json(res.locals.quote);
 });
 
-app.listen(8080, () => console.log(`Server running on port 3000`));
+app.listen(3000, () => console.log(`Server running on port 3000`));
