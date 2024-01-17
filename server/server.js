@@ -14,8 +14,11 @@ app.get('/api/notes', entryController.entry, (req, res) => {
   return res.status(200).json(res.locals.notes);
 });
 
+app.use(express.json()); //to receive req.body
+app.use(express.urlencoded({ extended: false }));
+
 app.get('/api/quote', quoteController.getSingleQuote, (req, res) => {
-  console.log('back to frontend:', res.locals.quote);
+  // console.log('back to frontend:', res.locals.quote);
   return res.status(200).json(res.locals.quote);
 });
 
