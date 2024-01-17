@@ -1,8 +1,12 @@
 import React from 'react';
-import './styles.scss';
+import Quote from './components/Quote.jsx';
 
 const App = () => {
-  return <h1>inside App.js</h1>;
+  return (
+    <div className="mainContainer">
+      <Quote />
+    </div>
+  );
 };
 
 export default App;
