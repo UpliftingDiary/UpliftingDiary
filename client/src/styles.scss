@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Russo+One&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('../public/images/1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.mainContainer {
+  width: 50vw;
+  max-width: 2000px;
+  text-align: center;
+  margin: 14em auto;
+  padding-bottom: 2em;
+  font-size: 2.2vh;
+  color: #13273e;
+}
+
+.quoteContainer {
+  font-size: 1.5em;
+  margin-top: 10em;
+}
+
+.quote {
+}
+
+.author {
+  text-align: right;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
