@@ -8,6 +8,8 @@ const Quote = () => {
   const quote = useSelector((state) => state.quote);
   //   console.log('quote:', quote);
 
+  //uncomment this to render quotes
+
   // useEffect(() => {
   //   dispatch(fetchData());
   // }, [dispatch]);

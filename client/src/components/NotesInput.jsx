@@ -23,6 +23,7 @@ const NotesInput = () => {
     event.preventDefault();
     console.log('Submitted note to save to DB:', note);
     dispatch(addNote(note));
+    setNote('');
   };
 
   // get today's date in MM-DD-YYY format
