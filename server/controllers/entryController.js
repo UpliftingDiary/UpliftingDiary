@@ -20,7 +20,7 @@ entryController.entry = async (req, res, next) => {
 entryController.addEntry = async (req, res, next) => {
   try {
     const addNote = await addEntries(req.body.note);
-    res.locals.addNote = addNote.input;
+    res.locals.addNote = addNote;
 
     return next();
   } catch (error) {
