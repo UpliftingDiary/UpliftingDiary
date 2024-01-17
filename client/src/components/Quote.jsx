@@ -13,9 +13,9 @@ const Quote = () => {
   }, [dispatch]);
 
   return (
-    <div className="quoteContainer">
-      <p className="quote">There's no crying in baseball! </p>
-      <p className="author">- A League of Their Own</p>
+    <div className="quote-container">
+      {/* <p className="quote">There's no crying in baseball! </p>
+      <p className="author">- A League of Their Own</p> */}
       {quote ? (
         <div>
           <p className="quote">{quote.quote}</p>
