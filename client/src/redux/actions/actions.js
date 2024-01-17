@@ -50,7 +50,7 @@ export const viewAllNotes = () => {
       });
 
       const data = await response.json();
-
+      console.log('data from backend:', data);
       //dispatch reducer to add all notes from DB to state
       dispatch({
         type: types.VIEW_ALL_NOTES,
